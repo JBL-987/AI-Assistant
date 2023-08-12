@@ -2,7 +2,6 @@ import speech_recognition as sr
 import os
 import pyttsx3
 import pywhatkit
-import wikipedia
 import datetime
 import time
 
@@ -58,10 +57,10 @@ def playYT(inputs):
     speak('playing' + inputs)
     pywhatkit.playonyt(inputs)
 
-def wikis(inputs):
+def google(inputs):
     subject = inputs.replace('tell me about', '')
-    info = wikipedia.summary(subject, 1)
-    speak(info)
+    speak('searching' + subject)
+    pywhatkit.search(subject)
 
 def tellTime():
     timenow = datetime.datetime.now().strftime('%H:%M')
@@ -100,7 +99,7 @@ while True:
                     
 
                 elif 'tell me about' in my_text:
-                    wikis(my_text)
+                    google(my_text)
                     
 
                 elif 'time' in my_text:
@@ -111,7 +110,7 @@ while True:
                     speak("Good bye, see you next time!")
                     break
 
-                elif 'bing chilling' in my_text:
+                elif 'ice cream' in my_text:
                     bingChilling()
 
                 else:
