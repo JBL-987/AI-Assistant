@@ -135,5 +135,7 @@ while True:
 # Guide to install all modules:
 #     1. Open terminal in visual studio
 #     2. type "py -m pip install -r modules.txt"
+
+#contributor: yodhasu
   
            
